@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   CONFIGURACIÓN GENERAL Y VARIABLES DE BOOTSTRAP PARA "LA SERRANITA"
+   ========================================================================== */
+
+.tema-serranita {
+    /* Mapeo de tus colores a Bootstrap */
+    --bs-primary: #008A4B;       /* Verde */
+    --bs-danger: #E31A1A;        /* Rojo */
+    --bs-warning: #FFD400;       /* Amarillo */
+    
+    /* Fondos y textos */
+    --bs-body-bg: #F9F9F9;
+    --bs-body-color: #333333;
+    
+    /* Tu tipografía exacta */
+    --bs-font-sans-serif: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    --bs-border-radius: 14px;
+}
+
+/* ==========================================================================
+   ESTILOS PERSONALIZADOS (Basados en tu CSS original)
+   ========================================================================== */
+
+/* Efecto de subrayado amarillo para títulos de sección */
+.titulo-seccion {
+    color: var(--bs-primary);
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+}
+
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background-color: var(--bs-warning);
+    border-radius: 2px;
+}
+
+/* Subrayado del logo */
+.logo-serranita {
+    color: var(--bs-danger);
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--bs-warning);
+    display: inline-block;
+}
+
+/* Efecto hover suave para las tarjetas (Misión/Visión/Productos) */
+.card {
+    border: 1px solid #EEEEEE;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+}
+
+/* Ajuste para que las imágenes de las tarjetas tengan el mismo tamaño */
+.img-tarjeta {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   CLASES DE FORZADO DE COLOR (Overrides de Bootstrap)
+   ========================================================================== */
+
+/* Forzar el color verde exacto de La Serranita para textos */
+.text-verde-serranita {
+    color: var(--bs-primary) !important; 
+}
+
+/* Forzar el color de fondo verde exacto de La Serranita para el footer */
+.bg-verde-serranita {
+    background-color: var(--bs-primary) !important;
+}
+
+/* ==========================================================================
+   ESTILOS PARA EL FOOTER Y REDES SOCIALES
+   ========================================================================== */
+
+/* Efecto hover amarillo para los iconos del footer */
+.icono-redes {
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.icono-redes:hover {
+    color: var(--bs-warning) !important; /* Se pintan del amarillo de tu marca */
+    transform: translateY(-5px);         /* Dan un pequeño salto hacia arriba */
+}
+
+
+/* Customización para el menú nav-underline de La Serranita */
+
+/* 1. Línea amarilla solo para la opción seleccionada (activa) */
+.nav-underline .nav-link.active {
+    color: #212529 !important;        /* Mantiene el texto oscuro legible */
+    border-bottom-color: #FFC107 !important; /* Color amarillo/dorado corporativo */
+    border-bottom-width: 3px !important;     /* La hacemos un poquito más gruesa para que resalte */
+}
+
+/* 2. Eliminamos el subrayado gris automático de Bootstrap al pasar el mouse */
+.nav-underline .nav-link:not(.active):hover {
+    border-bottom-color: transparent !important;
+    color: #0d6efd; /* O el color que prefieras cuando pasen el mouse por encima */
+}
+
+
+/* =========================================
+   estilos.css - Hoja de estilos catalogo
+   ========================================= */
+
+/* 1. Variables de colores principales */
+:root {
+    /* Aquí colocaremos el color de tu primera página */
+    --color-principal: TU_COLOR_AQUI; 
+    
+    --fondo-claro: #f8f9fa;
+    --texto-oscuro: #333333;
+}
+
+/* 2. Estilos base del documento */
+body {
+    background-color: var(--fondo-claro);
+    color: var(--texto-oscuro);
+}
+
+/* 3. Estilos para unificar la barra de navegación en todas las hojas */
+.navbar-custom {
+    background-color: var(--color-principal) !important;
+}
+
+/* 4. Estilos para títulos y bordes unificados */
+.text-custom {
+    color: var(--color-principal) !important;
+}
+
+.border-custom {
+    border-color: var(--color-principal) !important;
+}
+
+/* 5. Efecto interactivo para las tarjetas del catálogo */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
